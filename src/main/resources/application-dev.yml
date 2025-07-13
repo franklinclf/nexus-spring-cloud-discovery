@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    access:
+      default: unrestricted
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://eureka-1:8761/eureka/}
