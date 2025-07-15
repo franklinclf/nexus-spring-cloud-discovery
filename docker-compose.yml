@@ -21,7 +21,7 @@ services:
   eureka-2:
     build:
       context: ./
-    container_name: eureka-1
+    container_name: eureka-2
     ports:
       - "8762:8761"
     healthcheck:
