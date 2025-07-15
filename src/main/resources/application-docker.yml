@@ -14,7 +14,7 @@ management:
 
 eureka:
   instance:
-    hostname: eureka
+    hostname: localhost
   client:
     fetch-registry: true
     register-with-eureka: true
