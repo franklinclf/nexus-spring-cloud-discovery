@@ -14,9 +14,9 @@ services:
       timeout: 15s
       retries: 10
     environment:
-      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-2:8762/eureka/
+      - EUREKA_REPLICAS=http://eureka-2:8762/eureka/
       - REPLICA_ID=1
-      - SERVER_PORT=8761
+      - PORT=8761
     restart: unless-stopped
     networks:
       - nexus-dev
@@ -34,9 +34,9 @@ services:
       timeout: 15s
       retries: 10
     environment:
-      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://eureka-1:8761/eureka/
+      - EUREKA_REPLICAS=http://eureka-1:8761/eureka/
       - REPLICA_ID=2
-      - SERVER_PORT=8762
+      - PORT=8762
     restart: unless-stopped
     networks:
       - nexus-dev
